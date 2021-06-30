@@ -1,14 +1,16 @@
 <template>
     <div>
-        
+        test {{age}}
     </div>
 </template>
 <script>
 export default {
     name: "Test",
+    props: {
+        age:Number,
+    },
     mounted(){
-        console.log(this.$attrs)
-        console.log(this.$listeners)
+        console.log(this)
     }
 }
 </script>
