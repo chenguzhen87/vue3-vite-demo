@@ -2,15 +2,15 @@
   <h1>{{ msg }}</h1>
   <button @click="count++">count is: {{ count }}</button>
   <p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
-  <Test class="test" style="background:red" @test="test" @click="onClick" id="ddd" :age="age"/>
+  <VideoEditingTimeline :config="config"  />
 </template>
 
 <script>
-import Test from "./Test.vue"
+import VideoEditingTimeline from 'video-editing-timeline-vue';
 export default {
   name: 'HelloWorld',
   components: {
-    Test
+    VideoEditingTimeline
   },
   props: {
     msg: String
@@ -22,6 +22,14 @@ export default {
     }
   },
   setup() {
+    return {
+       config: {
+            canvasWidth: 5000,
+            canvasHeight: 50,
+            minimumScale: 10, // 一个小刻度长度(单位px)
+            minimumScaleTime: 1, // 一个小刻度代表时间（单位秒）
+       }
+    }
     // setup中不能访问this
     console.log(this)
   },

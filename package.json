@@ -6,6 +6,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "video-editing-timeline-vue": "^1.0.0",
     "vue": "^3.1.2"
   },
   "devDependencies": {
